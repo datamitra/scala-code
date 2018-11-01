@@ -3,12 +3,6 @@ package com.bdt.kafka.scala;
 import org.apache.spark.sql.SparkSession
 import org.apache.spark.sql.streaming.ProcessingTime
 
-//C:\Users\dgangapa\Downloads\spark-2.3.1-bin-hadoop2.7
-
-//kafka - 2.11-2.0.0
-//https://mvnrepository.com/artifact/org.apache.spark/spark-streaming-kafka-0-10
-//https://mvnrepository.com/artifact/org.apache.spark/spark-streaming-kafka-0-10_2.11/2.3.1
-//https://mvnrepository.com/artifact/org.apache.spark/spark-sql-kafka-0-10_2.11/2.3.1
 
 object SparkStreamingDemo1 {
   def main(args: Array[String]): Unit = {
@@ -24,15 +18,26 @@ object SparkStreamingDemo1 {
    .option("subscribe","test")
    .load()
   
+   //{"quoteId":"281032450","custAccountId":"518464","quoteName":null,"takeOverFlag":false,"federalFlag":false,"nonStandardQuoteFlag":false,"totalQuotePriceUsd":580.05,"totalQuotePrice":580.05,"quoteListPrice":990.0,"quoteNetPrice":580.05,"lastUpdateDate":1506380822951,"creationDate":1506380485000,"orderCompletionDate":null,"createdBy":"gcastillo11","currencyCode":"USD","distiId":"2019","resellerBillToId":"403187603","invoiceToPartySiteId":null,"quoteStatusId":"10005"}
+   
    streamingInputDF.printSchema()
    //println(streamingInputDF.count())
-  val noOfLines= streamingInputDF.groupBy("value").count()
-   val query=noOfLines
-   .writeStream
-   .format("console")
-   .outputMode("complete")
-   .trigger(ProcessingTime("5 seconds"))
+   
+   import org.apache.spark.sql.functions.get_json_object
+   
+ /* val noOfLines= streamingInputDF
+  .select(get_json_object (("value").cast("string"),"$.quoteId")
+      .alias("quoteId"))
+      .groupBy($"quoteId")
+      .count()
+ */     
+   val query=streamingInputDF
+   .writeStream.
+   format("orc")
+   .start("WHere to store)
+   .outputMode("append")
    .start()
+  
    query.awaitTermination()
 
   }

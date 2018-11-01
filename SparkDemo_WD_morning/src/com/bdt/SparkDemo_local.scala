@@ -19,7 +19,7 @@ object SparkDemo_local {
   
   def main(args: Array[String]): Unit = {
     //create configuration and create sparksession object
-        Logger.getLogger("org").setLevel(Level.ERROR)
+        Logger.getLogger("org").setLevel(Level.DEBUG)
 
     val conf=new SparkConf().
     setMaster("local[*]").

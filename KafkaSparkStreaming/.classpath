@@ -18,12 +18,6 @@
 	<classpathentry kind="lib" path="C:/Users/dgangapa/Downloads/kafka/libs/hk2-api-2.5.0-b42.jar"/>
 	<classpathentry kind="lib" path="C:/Users/dgangapa/Downloads/kafka/libs/hk2-locator-2.5.0-b42.jar"/>
 	<classpathentry kind="lib" path="C:/Users/dgangapa/Downloads/kafka/libs/hk2-utils-2.5.0-b42.jar"/>
-	<classpathentry kind="lib" path="C:/Users/dgangapa/Downloads/kafka/libs/jackson-annotations-2.9.6.jar"/>
-	<classpathentry kind="lib" path="C:/Users/dgangapa/Downloads/kafka/libs/jackson-core-2.9.6.jar"/>
-	<classpathentry kind="lib" path="C:/Users/dgangapa/Downloads/kafka/libs/jackson-databind-2.9.6.jar"/>
-	<classpathentry kind="lib" path="C:/Users/dgangapa/Downloads/kafka/libs/jackson-jaxrs-base-2.9.6.jar"/>
-	<classpathentry kind="lib" path="C:/Users/dgangapa/Downloads/kafka/libs/jackson-jaxrs-json-provider-2.9.6.jar"/>
-	<classpathentry kind="lib" path="C:/Users/dgangapa/Downloads/kafka/libs/jackson-module-jaxb-annotations-2.9.6.jar"/>
 	<classpathentry kind="lib" path="C:/Users/dgangapa/Downloads/kafka/libs/javassist-3.22.0-CR2.jar"/>
 	<classpathentry kind="lib" path="C:/Users/dgangapa/Downloads/kafka/libs/javax.annotation-api-1.2.jar"/>
 	<classpathentry kind="lib" path="C:/Users/dgangapa/Downloads/kafka/libs/javax.inject-1.jar"/>
