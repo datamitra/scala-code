@@ -9,6 +9,17 @@ object ScalaDemo {
   def main(args: Array[String]): Unit = {
     args.foreach(x=>println("Inside main - argument is :::"+x))
     
+    val stu1=new Student("stu1",1000,"dept1")
+    println("student name:::"+stu1.name) //here we are calling a getter method name()
+    println("student fee:::"+stu1.fee)
+    stu1.printDept()
+    println("student gender::"+stu1.getGender())
+    println("************After modifying*******")
+    stu1.name="AAAAAA"    //name_$eq
+    println("student name:::"+stu1.name)
+    //stu1.fee=100 cannot do this
+    stu1.setGender("female")
+    println("student gender::"+stu1.getGender())
   }
    
 }
@@ -19,15 +30,17 @@ class Student(var name:String,val fee:Int,dept:String ){
   //then we create get and set methods to access and modify the variables.
   // primary constructor and overloaded constructors
   println("Inside Student Class")
+  def printDept()={
   println("Department value is ::"+dept)
-  
+  }
   private var gender="male"
   
   def getGender():String={
-    println("Inside Get Gender")
+    println("Inside get Gender")
     gender
   }
-  def setGender(x:String){
+  def setGender(x:String):Unit={
+    println("Inside Set Gender")
     gender=x
   }
   
