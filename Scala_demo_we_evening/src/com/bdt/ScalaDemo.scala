@@ -31,8 +31,14 @@ object ScalaDemo {
         println(stu4.fee)
         println(stu4.printDept()) 
     
-  }
-   
+        
+        println("ELELECTIVE is ::::::"+Student.elective)
+                //println("ELELECTIVE is ::::::"+stu1.elective)
+val stu5=new Student("stu5",dept=Student.defDept)
+        println(stu5.fee)
+        println(stu5.printDept()) 
+        
+  }   
 }
 
 // class and primary constructor will be defined in one line
@@ -42,7 +48,7 @@ class Student(var name:String,val fee:Int=999,dept:String ){
   // primary constructor and overloaded constructors
   println("Inside Student Class")
   def printDept()={
-  println("Department value is ::"+dept)
+  println("stu::"+name+":::"+"Department value is ::"+dept)
   }
   private var gender="male"
   
@@ -67,4 +73,10 @@ class Student(var name:String,val fee:Int=999,dept:String ){
   }*/
 }
 
+//How to simulate static members
+// Companion object 
+object Student{
+  val elective="Communications"
+  val defDept="Electronics"
+}
 
