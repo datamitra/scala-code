@@ -20,12 +20,22 @@ object ScalaDemo {
     //stu1.fee=100 cannot do this
     stu1.setGender("female")
     println("student gender::"+stu1.getGender())
+    
+        println("*******************")
+        val stu2=new Student("stu2",dept="dept2")
+        println(stu2.fee)
+        val stu3=new Student(dept="dept2",name="stu3",fee=8888)
+             println(stu3.fee)
+
+
+    
+    
   }
    
 }
 
 // class and primary constructor will be defined in one line
-class Student(var name:String,val fee:Int,dept:String ){
+class Student(var name:String,val fee:Int=999,dept:String ){
   // in java we define all member variables as private
   //then we create get and set methods to access and modify the variables.
   // primary constructor and overloaded constructors
