@@ -27,8 +27,9 @@ object ScalaDemo {
         val stu3=new Student(dept="dept2",name="stu3",fee=8888)
              println(stu3.fee)
 
-
-    
+          val stu4=new Student("stu4")
+        println(stu4.fee)
+        println(stu4.printDept()) 
     
   }
    
@@ -54,6 +55,11 @@ class Student(var name:String,val fee:Int=999,dept:String ){
     gender=x
   }
   
+  //Overloaded constructor or Auxiliary Constructor
+  def this(name:String)={
+    this(name,33333,"DefDept")
+    println("Inside 2 args consturctor")
+  }
   
 }
 
