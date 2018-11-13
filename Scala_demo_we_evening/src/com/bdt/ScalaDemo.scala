@@ -61,6 +61,10 @@ class Student(var name:String,val fee:Int=999,dept:String ){
     println("Inside 2 args consturctor")
   }
   
+ /* def this(name:String,dept:String)={
+    this(name,33333,dept)
+    println("Inside 3 args consturctor")
+  }*/
 }
 
 
