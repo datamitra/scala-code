@@ -13,17 +13,24 @@ import java.util.Iterator;
 import org.apache.hadoop.conf.Configuration;
 
 public class CreateTable {
+@SuppressWarnings("deprecation")
 public static void main(String[] args) throws IOException {
 	// Instantiating configuration class
+	//Step1 get hbase-site.xml
 	Configuration config = HBaseConfiguration.create();
 	TableName table1 = TableName.valueOf("emp");
 	String family1 = "personal";
 	String family2 = "professional";
+	
+	//Step2 get conneciton to hbase
 	Connection connection = ConnectionFactory.createConnection(config);
-			Admin admin = connection.getAdmin();
+	
+	//Any DDL operations has to be performed with ADMIN
+	Admin admin = connection.getAdmin();
 			
-	HTableDescriptor tableDescriptor = new HTableDescriptor(table1);
-	tableDescriptor.addFamily(new HColumnDescriptor(family1));
+	@SuppressWarnings("deprecation")
+	HTableDescriptor tableDescriptor = new HTableDescriptor(table1); // Represents Table
+	tableDescriptor.addFamily(new HColumnDescriptor(family1)); // Column family
 	tableDescriptor.addFamily(new HColumnDescriptor(family2));
 	admin.createTable(tableDescriptor);
     // Execute the table through admin
