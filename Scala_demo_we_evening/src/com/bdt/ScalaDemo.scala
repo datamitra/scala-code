@@ -9,6 +9,15 @@ object ScalaDemo {
   def main(args: Array[String]): Unit = {
     args.foreach(x=>println("Inside main - argument is :::"+x))
     
+    
+    val emp1=Emplpoyee("emp1",1000,"dept1")
+    println(emp1.name)
+    val emp2=emp1.copy(name="emp2")  
+    val emp3=emp1.copy()
+    println(emp3.name)
+    println("*******************")
+    
+    
     val stu1=new Student("stu1",1000,"dept1")
     println("student name:::"+stu1.name) //here we are calling a getter method name()
     println("student fee:::"+stu1.fee)
@@ -79,4 +88,11 @@ object Student{
   val elective="Communications"
   val defDept="Electronics"
 }
+
+
+
+case class Emplpoyee(name:String,salary:Int, dept:String)
+
+
+
 

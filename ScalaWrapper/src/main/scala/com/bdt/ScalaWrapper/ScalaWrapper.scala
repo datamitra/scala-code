@@ -1,3 +1,5 @@
+package com.bdt.ScalaWrapper
+
 import org.apache.log4j.Logger
 import org.apache.spark.SparkConf
 import org.apache.spark.sql.SparkSession
@@ -29,7 +31,7 @@ object ScalaWrapper {
     def hql_query(loc:String)={
       scala.io.Source.fromFile(loc).mkString
     }
-    
+     
     for(i <- job_steps.indices){
       createTable(job_steps(i)(1),job_steps(i)(2),job_steps(i)(3),job_steps(i)(4),hql_query(job_steps(i)(5)))
     }
