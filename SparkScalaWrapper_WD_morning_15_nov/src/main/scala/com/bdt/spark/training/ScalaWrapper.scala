@@ -17,6 +17,12 @@ object ScalaWrapper {
     
     val sc=spark.sparkContext
     
+    val df1=spark.sql("""
+    select ordernumber,sum(quantityordered*priceeach) as tot_price,
+    current_timestamp() as insert_date from hdp_datalake.ordetails group by ordernumber""")
+    
+    df1.write.mode("append").saveAsTable("res1")
+    
     logger.info("Application ID is :"+sc.applicationId)
     logger.warn("Application ID is :"+sc.applicationId)
     
