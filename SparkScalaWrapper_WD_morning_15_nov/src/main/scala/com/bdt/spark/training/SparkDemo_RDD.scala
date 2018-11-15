@@ -5,7 +5,7 @@ import org.apache.spark.sql.SparkSession
 import org.apache.log4j.Logger
 import org.apache.log4j.Level
 
-object SparkDemo {
+object SparkDemo_RDD {
   
   //For developing spark applicaitons create scala project
   //Add spark dependent jar -> prpject->buildpath->configure bildpath-> add external jars
@@ -21,7 +21,7 @@ object SparkDemo {
     //create configuration and create sparksession object
         Logger.getLogger("org").setLevel(Level.DEBUG)
 
-    val conf=new SparkConf()
+    val conf=new SparkConf().setMaster("local[*]")
     
     /* Production - create empty configuration
      * val conf=new SparkConf()
@@ -43,7 +43,6 @@ object SparkDemo {
     .builder()
     .appName("SparkDemo1")
     .config(conf)
-    .enableHiveSupport()
     .getOrCreate()
     
     
