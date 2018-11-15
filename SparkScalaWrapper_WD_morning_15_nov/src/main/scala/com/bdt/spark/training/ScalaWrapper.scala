@@ -19,7 +19,7 @@ object ScalaWrapper {
     
     val df1=spark.sql("""
     select ordernumber,sum(quantityordered*priceeach) as tot_price,
-    current_timestamp() as insert_date from hdp_datalake.ordetails group by ordernumber""")
+    current_timestamp() as insert_date from hdp_datalake.orderdetails group by ordernumber""")
     
     df1.write.mode("append").saveAsTable("res1")
     
