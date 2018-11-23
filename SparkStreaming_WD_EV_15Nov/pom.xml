@@ -3,11 +3,11 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.bdt</groupId>
-  <artifactId>SparkScalaWrapper_WD_morning_15_nov</artifactId>
-  <version>0.0.2-SNAPSHOT</version>
+  <artifactId>SparkDemo_WD_EV_15Nov</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
   <packaging>jar</packaging>
 
-  <name>SparkScalaWrapper_WD_morning_15_nov</name>
+  <name>SparkDemo_WD_EV_15Nov</name>
   <url>http://maven.apache.org</url>
 
   <properties>
@@ -22,6 +22,7 @@
       <scope>test</scope>
     </dependency>
     
+    
     <!-- https://mvnrepository.com/artifact/org.scala-lang/scala-library -->
 <dependency>
     <groupId>org.scala-lang</groupId>
@@ -35,10 +36,28 @@
     <version>2.1.1</version>
 </dependency>
     
+    
     <!-- https://mvnrepository.com/artifact/org.apache.spark/spark-sql -->
 <dependency>
     <groupId>org.apache.spark</groupId>
     <artifactId>spark-sql_2.11</artifactId>
+    <version>2.1.1</version>
+</dependency>
+    <!-- https://mvnrepository.com/artifact/org.apache.spark/spark-sql-kafka-0-10 -->
+
+    
+    <!-- https://mvnrepository.com/artifact/org.apache.spark/spark-streaming -->
+<dependency>
+    <groupId>org.apache.spark</groupId>
+    <artifactId>spark-streaming_2.11</artifactId>
+    <version>2.1.1</version>
+    <scope>provided</scope>
+</dependency>
+    
+ 
+    <dependency>
+    <groupId>org.apache.spark</groupId>
+    <artifactId>spark-sql-kafka-0-10_2.11</artifactId>
     <version>2.1.1</version>
 </dependency>
     
