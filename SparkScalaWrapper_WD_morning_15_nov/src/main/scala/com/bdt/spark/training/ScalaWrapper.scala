@@ -40,9 +40,11 @@ object ScalaWrapper {
      
     for(i <- job_steps.indices){
       logger.info("***************"+i)
-      createTable(job_steps(i)(1),job_steps(i)(2),job_steps(i)(3),job_steps(i)(4),hql_query(job_steps(i)(5)))
+      createTable(job_steps(i)(1),job_steps(i)(2),
+          job_steps(i)(3),job_steps(i)(4),hql_query(job_steps(i)(5)))
     }
-    def createTable(TempTableReq:String,BroadCast:String,Cached:String,TempTableName:String,hql_text:String){
+    def createTable(TempTableReq:String,BroadCast:String,
+        Cached:String,TempTableName:String,hql_text:String){
       if(TempTableReq=="Y"){
             if(Cached=="Y"){
               logger.info("Temp Table name is:"+TempTableName)
